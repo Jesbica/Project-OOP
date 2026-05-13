@@ -1,15 +1,10 @@
 package br.com.concessionaria.model;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-
 public class Veiculo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,4 +21,85 @@ public class Veiculo {
     @ManyToOne
     @JoinColumn(name = "marca_id")
     private Marca marca;
+
+    public Veiculo() {
+    }
+
+    public Veiculo(Long id, String modelo, Integer ano, String cor,
+                   Double preco, Double quilometragem,
+                   StatusVeiculo status, Marca marca) {
+
+        this.id = id;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+        this.preco = preco;
+        this.quilometragem = quilometragem;
+        this.status = status;
+        this.marca = marca;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public Integer getAno() {
+        return ano;
+    }
+
+    public void setAno(Integer ano) {
+        this.ano = ano;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public Double getQuilometragem() {
+        return quilometragem;
+    }
+
+    public void setQuilometragem(Double quilometragem) {
+        this.quilometragem = quilometragem;
+    }
+
+    public StatusVeiculo getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusVeiculo status) {
+        this.status = status;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
 }

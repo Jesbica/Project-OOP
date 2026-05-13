@@ -16,6 +16,10 @@
 
     <properties>
         <java.version>17</java.version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version> <!-- Ou a versão estável mais atual -->
+        <relativePath/>
     </properties>
 
     <dependencies>
